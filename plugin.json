@@ -1,0 +1,29 @@
+{
+    "id": "nodebb-widget-welcome",
+    "name": "Prototypr welcome",
+    "description": "Welcome section",
+    "url": "",
+    "library": "./library.js",
+    "hooks": [
+        {
+            "hook": "static:app.load",
+            "method": "init"
+        },
+        {
+            "hook": "filter:widgets.getWidgets",
+            "method": "defineWidget"
+        },
+        {
+            "hook": "filter:widget.render:welcome",
+            "method": "renderSearchBarWidget"
+        }
+    ],
+    "templates": "./public/templates",
+    "less": [
+        "./public/less/welcome.less"
+    ],
+    "scripts": [
+        "./public/js/welcome.js"
+    ],
+    "compatibility": "^1.1.2"
+}
